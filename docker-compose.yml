@@ -1,0 +1,45 @@
+version: '2.2'
+
+services:
+  web:
+    build:
+      context: docker/apache-php7/
+    ports:
+      - "8200:80"
+
+    links:
+      - mysql
+    volumes:
+      - .:/var/www/html/
+    depends_on:
+      mysql:
+        condition: service_started
+    networks:
+      - app_1
+
+  mysql:
+    image: mysql:5.7.20
+    environment:
+      - MYSQL_DATABASE=dbProjet
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+    command: --sql-mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+    ports:
+      - "8300:3306"
+    volumes:
+      - ~/.docker_local_folders/db/mysql:/var/lib/mysql
+    networks:
+      - app_1
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8301:80"
+    links:
+      - mysql:db
+    networks:
+      - app_1
+
+networks:
+  app_1:
