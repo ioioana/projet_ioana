@@ -1,0 +1,385 @@
+
+@import "~bootstrap/scss/bootstrap";
+@import "~magic.css/assets/scss/magic";
+
+$primary: #404042;
+$secondary: #f6f6f6;
+$third: lighten($primary, 30%);
+
+@font-face {
+    font-family: 'source-code-pro';
+    src: url('../font/source-code-pro/SourceCodePro-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wrapper {
+    font-family: source-code-pro, sans-serif;
+    font-style: normal;
+    font-size: 0.9vw;
+    background-color: $primary;
+    color: $secondary;
+    //max-width: 800 em;
+    //margin: 4em;
+    max-width: 100%;
+    //padding: 2em;
+}
+
+.header {
+    background-color: $secondary;
+    color: $primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#logo img {
+    width: 10em;
+    margin: 2em;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+a {
+    color: $primary;
+}
+
+.footer a {
+    color: $secondary;
+}
+
+.carousel {
+    padding: 2em 0;
+}
+
+.articles {
+    max-height: 200vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.articles div {
+    background-color: $third;
+    width: 45%;
+    padding: 2vh 1vw;
+    max-height: 50vh;
+    text-align: justify;
+    margin: 2vw;
+}
+
+.articles img {
+    width: 20vw;
+    height: 20vh;
+    padding: 1vw;
+    float: left;
+    object-fit: contain;
+    //border-radius: 50%;
+}
+
+.articles h2 {
+    margin-top: 1em;
+}
+
+.articles a {
+    padding: 1vw;
+    background-color: $primary;
+    color: $secondary;
+    margin-top: 1vh;
+}
+
+.footer {
+    display: block;
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+}
+.footer div:first-child *{
+    width: 2em;
+    padding: 1em;
+}
+
+.connexion {
+    text-align: center;
+}
+
+.connexion h2 {
+    padding: 1em;
+    margin: 2em;
+}
+
+.options {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.options div {
+    width: 45%;
+    padding: 2vw;
+    align-items: center;
+    text-align: center;
+}
+
+.options img{
+    width: 20vw;
+    height: 20vh;
+    padding: 2vw;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+$red: #e74c3c;
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+//html, body {
+//    background: #f1f1f1;
+//    font-family: 'Merriweather', sans-serif;
+//    padding: 1em;
+//}
+
+h1 {
+    text-align: center;
+    margin: 4vh auto;
+}
+
+form {
+    max-width: 40vw;
+    text-align: center;
+    align-items: center;
+    margin: 2em auto;
+
+    .input, .textarea {
+        border:0; outline:0;
+        padding: 1em;
+        border-radius: 8px;
+        display: block;
+        width: 100%;
+        margin-top: 1em;
+        box-shadow: 0 1px 1px rgba(black, 0.1);
+        resize: none;
+
+        &:focus {
+            box-shadow: 0 0px 2px rgba($red, 1)!important;
+        }
+    }
+
+    .input-submit {
+        margin: 2vw;
+        color: $secondary;
+        background: $third;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0 1px 1px 1px rgba(#aaa, 0.6);
+        }
+    }
+
+    .textarea {
+        height: 40em;
+        width: 40em;
+    }
+}
+
+
+.half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+}
+
+.right { width: 50%; }
+
+.left {
+    margin-right: 2%;
+}
+
+
+@media (max-width: 480px) {
+    .half {
+        width: 100%;
+        float: none;
+        margin-bottom: 0;
+    }
+}
+
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.histoire img {
+    width: 30%;
+    height: 30vh;
+    margin: 2vw 4vw;
+}
+
+.histoire div:first-child *{
+    display: inline-block;
+    text-align: center;
+}
+.histoire div:nth-child(2) {
+    display: block;
+    //width: 80%;
+    margin: 4em;
+    text-align: justify;
+}
+
+.equipe {
+    margin: 4em;
+    text-align: justify;
+}
+
+.equipe img {
+    display: block;
+    width: 40vw;
+    height: 30vh;
+    margin: 2em auto;
+}
+
+.login{
+    width: 40%;
+    padding: 2em;
+    margin: auto;
+}
+
+tbody img {
+    display: block;
+    width: 10vw;
+    height: 20vh;
+}
+
+table {
+    //display: block;
+    width: 80% !important;
+    margin: 8vh auto;
+
+}
+
+.table, .main a {
+    color: $secondary;
+}
+
+.produits img {
+    width: 5vw;
+    height: 10vh;
+}
+
+.btn {
+    margin: 2vw;
+    color: $secondary;
+    background: $third;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 1px 1px 1px rgba(#aaa, 0.6);
+    }
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.carouselVue{
+    position: relative;
+}
+
+.carousel__nav{
+    position: absolute;
+    top: 50%;
+    //margin-top: -5vw;
+    left: 5vw;
+    //background: url('../../public/build/images/prev.png');
+    //background-repeat: no-repeat;
+    width: 63px;
+    height: 63px;
+}
+.carousel__nav.carousel__next{
+    right: 5vw;
+    left: auto;
+    //background-image: url('../../public/build/images/next.png');
+}
+
+.slide-right-enter-active{
+    animation: slideRightIn 3s;
+}
+
+.slide-right-leave-active{
+    animation: slideRightOut 3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes slideRightIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideRightOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.slide-left-enter-active{
+    animation: slideLeftIn 3s;
+}
+
+.slide-left-leave-active{
+    animation: slideLeftOut 3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes slideLeftIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideLeftOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+.carousel__pagination {
+   position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.carousel__pagination button {
+    display: inline-block;
+    width: 2vw;
+    height: 2vw;
+    background-color: #000;
+    opacity: 0.8;
+    border-radius: 2vw;
+    margin: 0 1vw;
+}
+
+.carousel__pagination button.active {
+    background-color: #fff;
+}
