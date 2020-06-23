@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Produits{% endblock %}
+
+{% block body %}
+    <h1>Liste des Produits</h1>
+
+    <table class="table produits">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Produit</th>
+                <th>Photo</th>
+                <th>Prix</th>
+                {% if app.user %}
+                    <th>Actions</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.nomProduit }}</td>
+                <td><img src="{{ asset('build/images/')}}{{ produit.photoProduit }}" alt=""></td>
+                <td>{{ produit.prixProduit }} €</td>
+                {% if app.user %}
+                    <td class="actions">
+                        <a href="{{ path('produit_show', {'id': produit.id}) }}" title="afficher"><button class="btn"><i class="fas fa-eye"></i></button></a>
+                        <a href="{{ path('produit_edit', {'id': produit.id}) }}" title="editer"><button class="btn"><i class="fas fa-pencil-alt"></i></button></a>
+                        <a href="{{ path('produit_delete', {'id': produit.id}) }}" title="supprimer">{{ include('produit/_delete_form.html.twig') }}</a>
+                    </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if app.user %}
+        <a href="{{ path('produit_new') }}">Créer un nouveau Produit</a>
+    {% endif %}
+{% endblock %}

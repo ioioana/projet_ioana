@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Barber{% endblock %}</title>
+        {% block stylesheets %}
+        {{  encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <a href="{{ path('first') }}" id="logo" class="magictime puffIn">
+                    <img src="{{asset('build/images/logo.png')}}" alt="logo">
+                </a>
+                <h1>Barber place</h1>
+                <nav>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ path('service_index') }}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('produit_index') }}">Produits</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('nous') }}">Nous</a>
+                        </li>
+                        <li class="nav-item">
+                            {% if app.user %}
+                                <a class="nav-link" href="{{ path('admin') }}">Admin</a>
+                            {% else %}
+                                <a class="nav-link" href="{{ path('app_login') }}">Admin</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main">
+                {% block body %}
+                {% endblock body %}
+            </div>
+            <div class="footer">
+                <div id="footer">
+                    <a :href="facebook" target="_blank" title="facebook"><i class="fab fa-facebook"></i></a>
+                    <a :href="twitter" target="_blank" title="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a :href="mail" title="email"><i class="fas fa-at"></i></a>
+                </div>
+                <div>
+                    <p>46 Rue René Clair</p>
+                    <p>75018 PARIS</p>
+                </div>
+            </div>
+        </div>
+
+
+        {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

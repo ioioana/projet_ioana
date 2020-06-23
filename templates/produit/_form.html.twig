@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+
+    <div class="cf">
+        <div class="input" id="input-name">
+            {{ form_row(form.nomProduit, { 'attr': {'class': 'input'} }) }}
+        </div>
+        <div class="input" id="input-photo">
+            {{ form_row(form.photoProduit, { 'attr': {'class': 'input'} }) }}
+        </div>
+    </div>
+    <div class="cf">
+        <div id="input-prix">
+            {{ form_row(form.prixProduit, { 'attr': {'class': 'input'} }) }}
+        </div>
+    </div>
+    <div>
+        {{ form_row(form.enregistrer) }}
+    </div>
+{{ form_end(form) }}

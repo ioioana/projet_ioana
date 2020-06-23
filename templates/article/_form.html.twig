@@ -1,0 +1,20 @@
+{{ form_start(form) }}
+
+        <div class="half left cf">
+            <div class="input" id="input-name">
+                {{ form_row(form.titreArticle, { 'attr': {'class': 'input'} }) }}
+            </div>
+            <div class="input" id="input-photo">
+                {{ form_row(form.photoArticle, { 'attr': {'class': 'input'} }) }}
+            </div>
+        </div>
+        <div class="half right cf">
+            <div id="input-contenu">
+                {{ form_row(form.contenuArticle, { 'attr': {'class': 'textarea'} }) }}
+            </div>
+        </div>
+        <div>
+            {{ form_row(form.enregistrer) }}
+        </div>
+
+{{ form_end(form) }}

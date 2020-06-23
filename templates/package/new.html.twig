@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Package{% endblock %}
+
+{% block body %}
+    <h1>Créer un nouveau Package</h1>
+
+    {{ include('package/_form.html.twig') }}
+
+    <a href="{{ path('package_index') }}"><i class="far fa-arrow-alt-circle-left"></i> Retour à la liste</a>
+{% endblock %}
