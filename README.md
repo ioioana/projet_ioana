@@ -21,13 +21,13 @@ cd projet_ioana
 3.Launch docker containers (web, mysql, phpmyadmin)
 
 ```bash
-docker-compose up -build
+docker-compose up --build
 ```
 
 4.Enter into the web container
 
 ```bash
-docker exec -itu apache projetioana_web_1 bash
+docker exec -itu apache projetioanamaster_web_1 bash
 ```
 
 5.Install dependencies
