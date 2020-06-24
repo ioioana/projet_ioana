@@ -27,7 +27,7 @@ docker-compose up --build
 4.Enter into the web container
 
 ```bash
-docker exec -itu apache projetioanamaster_web_1 bash
+docker exec -itu apache projetioana_web_1 bash
 ```
 
 5.Install dependencies
