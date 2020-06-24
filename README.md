@@ -9,7 +9,7 @@
 1.Clone project
 
 ```bash
-git clone ....
+git clone git@github.com:ioioana/projet_ioana.git
 ```
 
 2.Move in source directory
