@@ -47,7 +47,7 @@ MYSQL_PASSWORD=root
 
 7.Install Database
 ```bash
-php bin/console doctrine:migrations:migrate
+inside the container: php bin/console doctrine:migrations:migrate
 
 into phpMyAdmin, run dump_projet_ioana.sql file
 ```
