@@ -34,6 +34,7 @@ docker exec -itu apache projetioana_web_1 bash
 ```bash
 composer install
 yarn install
+yarn add @symfony/webpack-encore --dev
 yarn run encore dev
 ```
 
