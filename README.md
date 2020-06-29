@@ -15,19 +15,19 @@ git clone git@github.com:ioioana/projet_ioana.git
 2.Move in source directory
 
 ```bash
-cd projet_ioana
+cd projet_ioana-master
 ```
 
 3.Launch docker containers (web, mysql, phpmyadmin)
 
 ```bash
-docker-compose up --build
+sudo docker-compose up --build
 ```
 
 4.Enter into the web container
 
 ```bash
-docker exec -itu apache projetioana_web_1 bash
+sudo docker exec -itu apache projetioanamaster_web_1 bash
 ```
 
 5.Install dependencies
@@ -58,8 +58,8 @@ password: adminpass
 
 ##Ports/ Containers
 ```bash
-0.0.0.0:8200->80/tcp            projetioana_web_1
-0.0.0.0:8301->80/tcp            projetioana_pma_1
-0.0.0.0:8300->3306/tcp          projetioana_mysql_1 
+0.0.0.0:8200->80/tcp            projetioanamaster_web_1
+0.0.0.0:8301->80/tcp            projetioanamaster_pma_1
+0.0.0.0:8300->3306/tcp          projetioanamaster_mysql_1 
 ```
 
