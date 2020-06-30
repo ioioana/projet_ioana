@@ -34,7 +34,7 @@ class Service
 //     * @var \Doctrine\Common\Collections\Collection
      * Many Services have Many Packages.
      * @ManyToMany(targetEntity="Package", inversedBy="services")
-     * @JoinTable(name="services_packages")
+     * @JoinTable(name="service_package")
      */
     private $packages;
 
